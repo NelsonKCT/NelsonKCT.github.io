@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# dev / internal tooling
+.claude/
+
+# internal design + working docs (not for public site)
+PRODUCT.md
+DESIGN.md
+Garmin Contribution Log.md
+
+# design inspiration references (third-party)
+references/
+
+# duplicate of assets/nelson.jpg (site uses the one in assets/)
+/Nelson.jpg
+
+# duplicate of assets/resume.pdf (site links assets/resume.pdf)
+/Resume.pdf

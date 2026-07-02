@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuo Chien-Ting · Software Engineer</title>
+  <meta name="description" content="Portfolio of Kuo, Chien-Ting (Nelson): M.S. in AI student at Columbia University (AI Infrastructure), previously full-stack engineer at Garmin APAC B2B.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-overlay" hidden></div>
+  <aside class="nav-drawer" id="nav-drawer" aria-label="Site navigation">
+    <p class="nav-drawer-kicker">Menu</p>
+    <nav class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <a class="nav-resume" href="assets/resume.pdf" download="Kuo-Chien-Ting-Resume.pdf">Resume (PDF)</a>
+      <div class="nav-socials">
+        <a href="https://github.com/NelsonKCT" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/chien-ting-kuo" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <h1 class="hero-title">
+      <span class="hero-title-text">Kuo&nbsp;Chien-Ting</span>
+      <span class="hero-bar hero-bar-accent" aria-hidden="true"></span>
+      <span class="hero-bar hero-bar-main" aria-hidden="true"></span>
+    </h1>
+    <p class="hero-subtitle"><span class="hero-subtitle-text">Software Engineer &middot; AI Infrastructure &middot; New York</span></p>
+    <a class="hero-scroll-hint" href="#education">Scroll<span class="hero-scroll-line" aria-hidden="true"></span></a>
+  </header>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="section-inner">
+      <h2 class="section-title reveal" data-roll>Education</h2>
+      <div class="education-grid">
+        <div class="education-entries">
+          <article class="edu-item reveal">
+            <p class="edu-dates">2026 &ndash; 2028 (Expected) &middot; New York, NY <span class="edu-now">Now</span></p>
+            <h3>Columbia University</h3>
+            <p class="edu-degree">M.S. in Artificial Intelligence &middot; AI Infrastructure track</p>
+          </article>
+          <article class="edu-item reveal">
+            <p class="edu-dates">2022 &ndash; 2026 &middot; Taoyuan, Taiwan</p>
+            <h3>National Central University</h3>
+            <p class="edu-degree">B.S. in Computer Science &amp; Information Engineering</p>
+            <p class="edu-notes">Presidential Award, top 5% of class &middot; Dean's Award, top 10% of class</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section section-dark" id="experience">
+    <div class="section-inner">
+      <h2 class="section-title reveal" data-roll>Experience</h2>
+      <p class="section-lead reveal">Now studying AI Infrastructure at Columbia University in New York, after a year shipping production systems at Garmin as a computer science student at National Central University.</p>
+
+      <ol class="timeline">
+        <li class="timeline-item reveal">
+          <p class="timeline-dates">Jul 2025 &ndash;<br>Jun 2026</p>
+          <div class="timeline-role">
+            <p class="timeline-label">Software Engineering Intern</p>
+            <h3><a href="https://www.garmin.com.tw/" target="_blank" rel="noopener">Garmin</a></h3>
+          </div>
+          <p class="timeline-summary">Full-stack on the APAC B2B team: 43 tickets shipped across 8 markets. Helped re-architect three legacy monoliths into Vue + Spring Boot services, and drove a Java 8&rarr;21 migration with centralized observability (ELK, OpenTelemetry, Sentry) across 9+ services.</p>
+        </li>
+        <li class="timeline-item reveal">
+          <p class="timeline-dates">Jul 2024 &ndash;<br>Aug 2024</p>
+          <div class="timeline-role">
+            <p class="timeline-label">Engineering Intern</p>
+            <h3><a href="https://www.bebit-tech.com/" target="_blank" rel="noopener">beBit TECH</a></h3>
+          </div>
+          <p class="timeline-summary">Analyzed a million-plus purchase records with pandas; built a scikit-learn revenue model that improved forecasting accuracy by 22%, and an AI customer-service chatbot on Gemini.</p>
+        </li>
+        <li class="timeline-item reveal">
+          <p class="timeline-dates">Jul 2023 &ndash;<br>Jun 2025</p>
+          <div class="timeline-role">
+            <p class="timeline-label">Research Assistant</p>
+            <h3><a href="https://emath.math.ncu.edu.tw/e_school/" target="_blank" rel="noopener">NCU Mathematics</a></h3>
+          </div>
+          <p class="timeline-summary">Co-led a four-person team building an educational math game in Unity, with AI that generates problems tuned to each student's skill level.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="projects-header">
+        <h2 class="section-title reveal" data-roll>Projects</h2>
+        <span class="projects-count" aria-hidden="true">02</span>
+      </div>
+
+      <ol class="projects-list">
+        <li class="project reveal">
+          <span class="project-number" aria-hidden="true">01</span>
+          <div class="project-main">
+            <h3><a href="https://github.com/NCUAppTeam/NCU-App" target="_blank" rel="noopener">NCU APP</a></h3>
+            <p class="project-meta">Full-Stack Product &middot; Mar 2023 &ndash; Present</p>
+            <p class="project-summary">Student-led campus app that streamlines access to university services and events. Led the event creation and management features.</p>
+            <dl class="project-stack">
+              <div><dt>Frontend</dt><dd>React, TypeScript, Tailwind</dd></div>
+              <div><dt>Backend</dt><dd>Supabase</dd></div>
+              <div><dt>Platforms</dt><dd>Docker</dd></div>
+            </dl>
+          </div>
+        </li>
+        <li class="project reveal">
+          <span class="project-number" aria-hidden="true">02</span>
+          <div class="project-main">
+            <h3><a href="https://github.com/Cobra30621/MathQuestionGame" target="_blank" rel="noopener">Math Magician</a></h3>
+            <p class="project-meta">Educational Game &middot; 2023 &ndash; 2025</p>
+            <p class="project-summary">Adaptive math game for elementary students; AI generates problems tuned to each player's skill. Built with a planner, an artist, and programmers.</p>
+            <dl class="project-stack">
+              <div><dt>Engine</dt><dd>Unity, C#</dd></div>
+              <div><dt>AI</dt><dd>Dynamic problem generation</dd></div>
+            </dl>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-dark" id="skills">
+    <div class="section-inner">
+      <h2 class="section-title reveal" data-roll>Skills</h2>
+      <div class="skills-groups">
+        <div class="skills-group reveal">
+          <h3 class="skills-group-label">Languages</h3>
+          <ul class="skills-list">
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" loading="lazy">Java</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" loading="lazy">TypeScript</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" loading="lazy">Python</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy">JavaScript</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="" loading="lazy">C / C++</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="" loading="lazy">C#</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" loading="lazy">SQL</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy">HTML / CSS</li>
+          </ul>
+        </div>
+        <div class="skills-group reveal">
+          <h3 class="skills-group-label">Frameworks</h3>
+          <ul class="skills-list">
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="" loading="lazy">Spring Boot 3</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="" loading="lazy">Vue (Pinia)</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" loading="lazy">React</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" loading="lazy">Node.js</li>
+            <li><img class="skill-icon icon-invert" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" alt="" loading="lazy">Unity</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" loading="lazy">Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="skills-group reveal">
+          <h3 class="skills-group-label">Infrastructure &amp; Data</h3>
+          <ul class="skills-list">
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="" loading="lazy">Kubernetes</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="" loading="lazy">Jenkins</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" loading="lazy">Docker</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="" loading="lazy">ELK</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opentelemetry/opentelemetry-original.svg" alt="" loading="lazy">OpenTelemetry</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sentry/sentry-original.svg" alt="" loading="lazy">Sentry</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="" loading="lazy">Redis</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apacheairflow/apacheairflow-original.svg" alt="" loading="lazy">Airflow</li>
+            <li><img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" loading="lazy">scikit-learn</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <h2 class="contact-title reveal">Let's build<br>something.</h2>
+          <div class="contact-actions reveal">
+            <a class="button button-solid" href="mailto:nelsonkuo0430@gmail.com">Email me</a>
+            <a class="button" href="assets/resume.pdf" download="Kuo-Chien-Ting-Resume.pdf">Resume</a>
+            <a class="button" href="https://github.com/NelsonKCT" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://www.linkedin.com/in/chien-ting-kuo" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <figure class="contact-photo reveal">
+          <img src="assets/nelson.jpg" alt="Portrait of Kuo, Chien-Ting" width="413" height="531" loading="lazy">
+          <figcaption>Kuo, Chien-Ting &middot; 郭建廷</figcaption>
+        </figure>
+      </div>
+      <p class="contact-fine">&copy; 2026 Kuo, Chien-Ting &middot; New York, NY</p>
+    </div>
+  </section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
