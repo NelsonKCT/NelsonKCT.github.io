@@ -150,6 +150,8 @@ a { color: inherit; }
 
 .nav-links a:hover { color: var(--accent); transform: translateX(6px); }
 
+.nav-links a.is-active { color: var(--accent); }
+
 .nav-drawer-foot {
   display: flex;
   flex-direction: column;
@@ -235,6 +237,29 @@ a { color: inherit; }
 
 .hero-subtitle-text { display: inline-block; }
 
+.hero-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--dark-border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dark-ink);
+}
+
+.availability-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
 .hero-scroll-hint {
   position: absolute;
   bottom: 44px;
@@ -268,6 +293,7 @@ a { color: inherit; }
 
 /* dark sections remap the shared tokens so every component adapts */
 .section-dark {
+  --bg: var(--dark-bg);
   --ink: var(--dark-ink);
   --text: var(--dark-text);
   --border: var(--dark-border);
@@ -658,6 +684,152 @@ a { color: inherit; }
   letter-spacing: 0.06em;
 }
 
+.copy-email.copied {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--dark-ink);
+}
+
+/* ==========================================================================
+   Writing — index list
+   ========================================================================== */
+
+.writing-list { list-style: none; display: grid; }
+
+.writing-item { border-top: 1px solid var(--border); }
+.writing-item:last-child { border-bottom: 1px solid var(--border); }
+
+.writing-item a {
+  display: grid;
+  grid-template-columns: minmax(6rem, 9rem) minmax(0, 1fr) auto;
+  gap: 1rem 2.5rem;
+  align-items: baseline;
+  padding: clamp(1.5rem, 3.5vh, 2.25rem) 0;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.writing-date {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.writing-body h3 {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.8vw, 2.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  word-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.writing-body p { margin-top: 0.55rem; max-width: 38rem; }
+
+.writing-arrow {
+  color: var(--ink);
+  font-size: 1.4rem;
+  transition: transform 0.3s var(--ease-out-quint), color 0.2s;
+}
+
+.writing-item a:hover h3,
+.writing-item a:hover .writing-arrow { color: var(--accent); }
+
+.writing-item a:hover .writing-arrow { transform: translateX(6px); }
+
+/* ==========================================================================
+   Article pages (writing/*.html)
+   ========================================================================== */
+
+.article-top {
+  padding: clamp(1.2rem, 3vw, 2rem) var(--gutter);
+}
+
+.article-top a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.article-top a:hover { color: var(--accent); }
+
+.article {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vh, 3.5rem) var(--gutter) clamp(4rem, 10vh, 7rem);
+}
+
+.article-meta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.article h1 {
+  color: var(--ink);
+  font-weight: 900;
+  font-size: clamp(2rem, 5.5vw, 3.3rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  word-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0.7rem 0 2rem;
+}
+
+.article h2 {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  margin: 2.2rem 0 0.8rem;
+}
+
+.article p { margin-bottom: 1.1rem; line-height: 1.75; }
+
+.article strong { color: var(--ink); font-weight: 600; }
+
+.article a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.article a:hover { color: var(--accent); }
+
+.article code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.86em;
+  background: oklch(93% 0.008 85);
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+  color: var(--ink);
+}
+
+.article-foot {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-foot a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.article-foot a:hover { color: var(--accent); }
+
 /* ==========================================================================
    Motion
    ========================================================================== */
@@ -681,6 +853,21 @@ a { color: inherit; }
     opacity: 0;
     transform: translateY(110%);
     animation: hero-sub-rise 0.6s var(--ease-out-quint) 2s forwards;
+  }
+
+  .hero-availability {
+    opacity: 0;
+    animation: hero-hint-in 0.6s var(--ease-out-quint) 2.35s forwards;
+  }
+
+  .availability-dot {
+    animation: dot-pulse 2.4s ease-out 3s infinite;
+  }
+
+  @keyframes dot-pulse {
+    0% { box-shadow: 0 0 0 0 oklch(58% 0.2 32 / 0.55); }
+    70% { box-shadow: 0 0 0 9px oklch(58% 0.2 32 / 0); }
+    100% { box-shadow: 0 0 0 0 oklch(58% 0.2 32 / 0); }
   }
 
   .hero-scroll-hint {
@@ -751,4 +938,13 @@ a { color: inherit; }
 
   .contact-actions { flex-direction: column; align-items: stretch; }
   .button { text-align: center; }
+
+  .writing-item a { grid-template-columns: 1fr auto; }
+  .writing-date { grid-column: 1 / -1; }
+
+  .hero-availability {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    padding: 0.5rem 0.9rem;
+  }
 }

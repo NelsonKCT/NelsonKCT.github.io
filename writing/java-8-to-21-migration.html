@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Migrating Nine Services from Java 8 to 21 · Kuo Chien-Ting</title>
+  <meta name="description" content="How a platform-wide Java 8 to 21 migration went from dependency archaeology to routine, with OpenRewrite doing the boring parts.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Migrating Nine Services from Java 8 to 21">
+  <meta property="og:description" content="OpenRewrite, dependency archaeology, and why nobody noticed the platform moved thirteen years forward.">
+  <meta property="og:image" content="https://nelsonkct.github.io/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="article-page">
+
+  <nav class="article-top">
+    <a href="../index.html#writing">&larr; Kuo Chien-Ting</a>
+  </nav>
+
+  <main class="article">
+    <p class="article-meta">June 2026 &middot; Garmin, APAC B2B</p>
+    <h1>Migrating Nine Services from Java 8 to 21</h1>
+
+    <p>During my internship at Garmin, a fleet of backend services was still running Java 8 with a phaseout deadline approaching. I ended up driving the migration to Java 21 and Spring Boot 3 across nine distinct services, which in practice meant about fifteen running instances once you count a repair-service portal deployed separately in seven countries.</p>
+
+    <h2>Let the machine do the mechanical part</h2>
+    <p>The core tool was <a href="https://docs.openrewrite.org/" target="_blank" rel="noopener">OpenRewrite</a>. Its recipes handle the mechanical rewrites: <code>javax</code> to <code>jakarta</code>, deprecated API replacements, Spring Boot 2 to 3 configuration changes. Running a recipe takes minutes. What it buys you is not speed on any single service, but consistency across all of them: the same transformation applied the same way nine times, with no fatigue-induced typos on service number seven.</p>
+
+    <h2>The real work is dependency archaeology</h2>
+    <p>What the recipes cannot do is decide what to do with a transitive dependency that has no Jakarta-compatible release, or a build plugin pinned five major versions back by a comment that says "do not upgrade". Every service had two or three of these. The pattern that worked for me: upgrade the build first, get it compiling with tests red, then fix tests in dependency order rather than file order. Most "test failures" were really serialization or time-zone behavior changes surfacing, not broken logic.</p>
+
+    <h2>Ship it like it never happened</h2>
+    <p>Each service went through the normal release process: peer review, a test report from a teammate, change-request sign-off, then production deployment. We staggered services so no two migrated in the same window. The success criterion was silence: no user-facing behavior change, no incident. That is what happened, which makes for a boring story and a good migration.</p>
+
+    <h2>What I would do differently</h2>
+    <p>I did not capture build-time and dependency-count numbers before starting, so I can say the migration went smoothly but not exactly how much healthier the builds became. Capturing a baseline costs ten minutes and makes the after-story concrete. That lesson cost me nothing this time, but I will not skip it again.</p>
+
+    <p>The migration also created the perfect excuse to fix a longer-standing problem: nobody could see what these services were doing in production. That story is in <a href="observability-rollout.html">the next post</a>.</p>
+
+    <footer class="article-foot">
+      <a href="../index.html#writing">&larr; All writing</a>
+    </footer>
+  </main>
+
+</body>
+</html>

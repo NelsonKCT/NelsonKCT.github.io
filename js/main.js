@@ -33,6 +33,47 @@
     if (e.key === 'Escape') setNav(false);
   });
 
+  /* ---------- copy email on click ---------- */
+
+  document.querySelectorAll('.copy-email').forEach(function (btn) {
+    var label = btn.querySelector('span');
+    var restore = null;
+    btn.addEventListener('click', function (e) {
+      if (!navigator.clipboard) return; // fall through to mailto
+      e.preventDefault();
+      navigator.clipboard.writeText(btn.dataset.email).then(function () {
+        btn.classList.add('copied');
+        label.textContent = 'Copied ✓';
+        clearTimeout(restore);
+        restore = setTimeout(function () {
+          btn.classList.remove('copied');
+          label.textContent = 'Email me';
+        }, 1800);
+      }).catch(function () {
+        window.location.href = btn.getAttribute('href');
+      });
+    });
+  });
+
+  /* ---------- active section indicator in the drawer ---------- */
+
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var sections = navLinks
+    .map(function (l) { return document.querySelector(l.getAttribute('href')); })
+    .filter(Boolean);
+
+  if (sections.length && 'IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (l) {
+          l.classList.toggle('is-active', l.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
   /* ---------- in-page anchor scrolling ---------- */
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
