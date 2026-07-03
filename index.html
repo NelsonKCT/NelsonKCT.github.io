@@ -38,7 +38,7 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#writing">Writing</a>
+      <!-- Writing section hidden until there are real posts to show; see commented-out section below -->
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-drawer-foot">
@@ -69,7 +69,7 @@
       <div class="education-grid">
         <div class="education-entries">
           <article class="edu-item reveal">
-            <p class="edu-dates">2026 &ndash; 2028 (Expected) &middot; New York, NY <span class="edu-now">Now</span></p>
+            <p class="edu-dates">2026 &ndash; 2027 (Expected) &middot; New York, NY <span class="edu-now">Now</span></p>
             <h3>Columbia University</h3>
             <p class="edu-degree">M.S. in Artificial Intelligence &middot; AI Infrastructure track</p>
           </article>
@@ -204,44 +204,11 @@
     </div>
   </section>
 
-  <!-- ============ WRITING ============ -->
-  <section class="section" id="writing">
-    <div class="section-inner">
-      <h2 class="section-title reveal" data-roll>Writing</h2>
-      <ol class="writing-list">
-        <li class="writing-item reveal">
-          <a href="writing/java-8-to-21-migration.html">
-            <span class="writing-date">Jun 2026</span>
-            <span class="writing-body">
-              <h3>Migrating Nine Services from Java 8 to 21</h3>
-              <p>OpenRewrite, dependency archaeology, and why nobody noticed the platform moved thirteen years forward.</p>
-            </span>
-            <span class="writing-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </li>
-        <li class="writing-item reveal">
-          <a href="writing/observability-rollout.html">
-            <span class="writing-date">May 2026</span>
-            <span class="writing-body">
-              <h3>From SSH-ing into Pods to Actually Observing</h3>
-              <p>Rolling ELK, OpenTelemetry, and Sentry across fifteen service instances in seven countries.</p>
-            </span>
-            <span class="writing-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </li>
-        <li class="writing-item reveal">
-          <a href="writing/payment-service-tuning.html">
-            <span class="writing-date">Apr 2026</span>
-            <span class="writing-body">
-              <h3>Four Small Fixes That Calmed a Payment Service</h3>
-              <p>Connection pooling, single-read config, a shared ObjectMapper, and a one-day Redis cache.</p>
-            </span>
-            <span class="writing-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </li>
-      </ol>
-    </div>
-  </section>
+  <!-- ============ WRITING ============
+       Section removed for now; add it back once there are real posts to
+       link. Reuse the .writing-list / .writing-item / .article-* styles
+       in css/style.css (see DESIGN.md) and drop new pages in writing/.
+  ============================================= -->
 
   <!-- ============ CONTACT ============ -->
   <section class="section section-dark" id="contact">
