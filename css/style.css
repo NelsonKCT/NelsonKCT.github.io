@@ -625,6 +625,53 @@ a { color: inherit; }
 .project-stack dd { color: var(--ink); font-weight: 500; }
 
 /* ==========================================================================
+   Publications
+   ========================================================================== */
+
+.pubs-list {
+  list-style: none;
+  display: grid;
+  gap: clamp(2.5rem, 6vh, 4rem);
+}
+
+.pub {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+  border-top: 1px solid var(--border);
+  padding-top: clamp(1.75rem, 4vh, 2.75rem);
+}
+
+.pub-meta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pub-title {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.6vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 46rem;
+}
+
+.pub-authors { font-size: 0.92rem; }
+
+.pub-authors strong { color: var(--ink); font-weight: 700; }
+
+.pub-summary { max-width: 42rem; }
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
    Contact
    ========================================================================== */
 
